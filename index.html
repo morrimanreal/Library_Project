@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
   </head>
   <body>
     <main
@@ -17,8 +19,19 @@
       <div>
         <h1>Library Project</h1>
         <div id="library">
-          <!-- Add table here -->
-          <table id="table" style="min-width: 680px; margin: 2rem">
+          <form name="frm">
+            <label for="title-form">Title</label>
+            <input type="text" name="title-form" id="title-form">
+            <label for="author-form">Author</label>
+            <input type="text" name="author-form" id="author-form">
+            <span>Read?</span>
+            <input type="checkbox" id="if-read">
+            <button type="submit" value="submit" class="btn">Submit</button>
+          </form>
+        </div>
+
+        <div>
+          <table class="book-table">
             <thead>
               <tr>
                 <th>Title</th>
@@ -26,25 +39,27 @@
                 <th>Read</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Name of the Wind</td>
-                <td>Patrick Rothfuss</td>
-                <td>
-                  <input
-                    type="checkbox"
-                    name="read"
-                    id="readLibraryCheckbox"
-                    checked
-                    disabled
-                  />
-                </td>
+            <tbody class = "tableBody"> 
+              <!-- <tr>
+                <td>Harry Potter</td>
+                <td>J.K Rowling</td>
+                <td><input type="checkbox" id="if-read" disabled></td>
               </tr>
-            </tbody>
+              <tr>
+                <td>Harry Potter</td>
+                <td>J.K Rowling</td>
+                <td><input type="checkbox" id="if-read" disabled></td>
+              </tr>
+              <tr>
+                <td>Harry Potter</td>
+                <td>J.K Rowling</td>
+                <td><input type="checkbox" id="if-read" disabled></td> -->
+              </tr>
+            </tbody>   
           </table>
         </div>
     </main>
 
-    <script src="app.js"></script>
+    
   </body>
 </html>
