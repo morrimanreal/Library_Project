@@ -40,6 +40,11 @@ class Library {
     const newTitle = document.createElement("td");
     const newAuthor= document.createElement("td");
     const checkBox = document.createElement("input")
+    const editButton = document.createElement("button")
+    editButton.textContent = "edit"
+    editButton.classList.add("edit-button");
+    // const editButton = document.querySelector(".edit-button")
+    // editButton.style.display = "inline-block"
     checkBox.type = ["checkbox"];
     checkBox.disabled = true;
     const tableBody = document.querySelector(".tableBody");
@@ -52,12 +57,26 @@ class Library {
     newRow.append(newTitle);
     newRow.append(newAuthor);
     newRow.append(checkBox);
+    newRow.append(editButton);
     tableBody.append(newRow);
     
   }
   
   editBook() {
-    
+
+    const editButton = document.querySelector(".edit-button");
+    const modalPopup = document.querySelector(".modal");
+    const modalContent = document.querySelector(".modal-content");
+
+    editButton.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      console.log("Hello");
+      modalPopup.append(modalContent);
+      document.body.append(modalPopup);
+
+
+    })
   }
 
 }
@@ -87,15 +106,17 @@ function listNewBook() {
   
       title.value = "";
       author.value = "";
+      read.checked = false;
 
       const newListOfBooks = new Library(count, [newBook]);
       
       console.log(newListOfBooks);
       newListOfBooks.addBook(newBook);
-    
+      newListOfBooks.editBook(newBook);
     }       
   });
 }
+
 
 listNewBook();
 
